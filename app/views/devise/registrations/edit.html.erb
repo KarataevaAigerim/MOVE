@@ -1,35 +1,68 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="edit-frame container">
+  <h2 class="edit-header">Edit my profile <% resource_name.to_s.humanize %></h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <div class="form-inputs">
+      <%= f.input :email, required: true, autofocus: true, label: false, placeholder: 'Email' %>
+      <%= f.input :first_name, label: false , placeholder: 'First name' %>
+      <%= f.input :last_name, label: false, placeholder: 'Last name' %>
+      <%= f.input :age, label: false, placeholder: 'Age' %>
+      <%= f.input :gender, label: false,  :collection => [['Female'], ['Male']], prompt: 'Gender' %>
+      <%= f.input :weight, label: false, placeholder: 'Weight (in kg)'%>
+      <%= f.input :height, label: false, placeholder: 'Height (in cm)' %>
+      <%= f.input :experience, label: false, :collection => [['Newbie'], ['Been working out now and then'], ['Have over 2 years experience in training']], prompt: 'I am ...' %>
+      <%= f.input :goal, label: false, :collection => [['Gain muscle'], ['Loose fat'], ['Improve health (maintain weight)']], prompt: 'I would like to...'%>
+      
+      
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+    
 
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% end %>
+
+      <%= f.input :password, label: false, placeholder: 'New password',
+                  hint: "*leave it blank if you don't want to change it",
+                  required: false,
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation, label: false, placeholder: 'New password confirmation',
+                  required: false,
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :current_password, label: false, placeholder: 'Current password',
+                  hint: "*we need your current password to confirm your changes",
+                  required: true,
+                  input_html: { autocomplete: "current-password" } %>
+    </div>
+
+    <div class="form-actions d-flex justify-content-center ">
+      <%= f.button :submit, "Update", class: "main-btn" %>
+    </div>
+  <% end %>
+
+  
+
+  <div class="pt-3 pb-3">
+  Want to leave us for good? <i class="fa-light fa-face-frown" style="color: #44dee3;"></i>
+   <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "buy-btn mt-3 mb-3" %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+  <%= link_to "Back", :back, class: "back-btn"%>
+</div>
+
+<div class="footer pt-5 ">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
   </div>
-<% end %>
+  <div class="footer-copyright">
+    
+    Karataeva Aigerim <i class="fas fa-heart"></i>
+  </div>
+</div>
 
-<h3>Cancel my account</h3>
 
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>

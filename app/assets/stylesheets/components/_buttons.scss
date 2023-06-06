@@ -1,0 +1,76 @@
+.main-btn {
+    background-color: $main;
+    border-radius: 25px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $main-font;
+    font-size: 18px;
+    // font-weight: 500;
+    // height: 40px;
+    // line-height: 20px;
+    list-style: none;
+    margin: 16px 0px;
+    outline: none;
+    padding: 8px 24px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+    }
+.main-btn:hover,
+.main-btn:focus {
+    background-color: $main;
+    color: $super-dark;
+    }
+
+
+.buy-btn{
+  color: $super-dark;
+  background-color: #FFFFFF;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  //   border: 1px solid #4A4A4A;
+}
+
+.buy-btn:hover{
+  background-color: #ffffff;
+}
+
+.back-btn{
+    color: $super-dark;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: lighter;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.main-b-btn{
+  color: white;
+  font-family: $slogan-font;
+//   letter-spacing: 5px;
+  font-weight: 500;
+  padding: 10px 30px 8px;
+  border-radius: 100px;
+  background: $main;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.main-b-btn:hover {
+  background: $main-b;
+  color: white;
+}

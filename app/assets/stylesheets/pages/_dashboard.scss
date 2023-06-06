@@ -1,0 +1,145 @@
+
+#dashboard {
+    display: flex;
+
+    p{
+        color: $super-dark;
+    }
+}
+
+  .dashboard-page-container {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 53px);
+  }
+  .content-container {
+    padding-top: 8px;
+  }
+  
+  .card-article-header {
+    font-size: 20px;
+  }
+
+  
+  .dashboard-banner {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .container {
+    margin-top: 50px;
+    width: 90%;
+  }
+  
+  .container-dashboard {
+    margin-top: 50px;
+    width: 90%;
+    padding-top: 8px;
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+  }
+  .mt-5 {
+    margin-top: 5px !important;
+  }
+  
+  .w-270 {
+    width: 270px !important;
+  }
+  
+  .h-40 {
+    height: 40px !important;
+  }
+  
+  .dashboard-cards {
+    grid-gap: 20px;
+    justify-items: center;
+    padding: 10px;
+    align-items: stretch;
+  }
+  
+  .sidebar-bg {
+    background-color: $light-a;
+  }
+  .border-color {
+    border-color: $main !important;
+  }
+  
+  a {
+    text-decoration: none;
+    color: $super-dark;
+    font-size: large;
+  }
+  
+  .dashboard-arrows {
+    display: flex;
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  @media (max-width: 767px) {
+    .w3-sidebar {
+      width: 100%;
+      float: none;
+    }
+  }
+  
+  // Smallest device
+  @media (min-width: 100px) and (max-width: 575px) {
+    .dashboard-cards {
+      grid-template-columns: 1fr;
+    }
+    .card-category {
+      height: 200px;
+      overflow: scroll;
+    }
+  }
+  
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) {
+    .dashboard-cards {
+      grid-template-columns: 1fr;
+    }
+    .card-category {
+      height: 180px;
+    }
+  }
+  
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    .dashboard-cards {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .card-category {
+      height: 160px;
+    }
+  }
+  
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    .dashboard-cards {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  
+    .card-category {
+      height: 130px;
+    }
+  }
+  
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    .dashboard-cards {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .card-category {
+      height: 100px;
+    }
+  }
+  
+  .hover-sidebar-list {
+    transition: 0.3s ease-in-out;
+  }
+  
+  .hover-sidebar-list:hover {
+    color: $main !important;
+    background-color: $light-a !important;
+  }
+  
