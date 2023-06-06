@@ -1,0 +1,26 @@
+.edit-frame{
+    width: 75%;
+    height: auto;
+    background-color: white;
+    padding: 50px 50px;
+    border-radius: 20px;
+}
+
+input[type="text"], textarea {
+
+    background-color : white; 
+    color: gray;
+  
+  }
+
+.form-select, .form-control {
+    background-color: white;
+    color: gray;
+}
+
+.edit-header{
+    font-family: $slogan-font;
+    color: $main-c;
+    padding-bottom: 10px;
+    text-align: center;
+}
