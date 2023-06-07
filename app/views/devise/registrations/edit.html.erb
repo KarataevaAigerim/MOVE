@@ -9,11 +9,11 @@
       <%= f.input :first_name, label: false , placeholder: 'First name' %>
       <%= f.input :last_name, label: false, placeholder: 'Last name' %>
       <%= f.input :age, label: false, placeholder: 'Age' %>
-      <%= f.input :gender, label: false,  :collection => [['Female'], ['Male']], prompt: 'Gender' %>
+      <%= f.input :gender, label: false,  collection: ['Female', 'Male'], prompt: 'Gender' %>
       <%= f.input :weight, label: false, placeholder: 'Weight (in kg)'%>
       <%= f.input :height, label: false, placeholder: 'Height (in cm)' %>
-      <%= f.input :experience, label: false, :collection => [['Newbie'], ['Been working out now and then'], ['Have over 2 years experience in training']], prompt: 'I am ...' %>
-      <%= f.input :goal, label: false, :collection => [['Gain muscle'], ['Loose fat'], ['Improve health (maintain weight)']], prompt: 'I would like to...'%>
+      <%= f.input :experience, label: false, collection: ['Newbie', 'Been working out now and then', 'Have over 2 years experience in training'], prompt: 'I am ...' %>
+      <%= f.input :goal, label: false, collection: ['Gain muscle', 'Loose fat', 'Improve health (maintain weight)'], prompt: 'I would like to...'%>
       
       
 
