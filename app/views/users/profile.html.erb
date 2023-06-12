@@ -1,11 +1,15 @@
 
-  <div>
-    <h1> My Profile </h1>
-    <p>Age: <%= @user.age %></p>
-    <p>Weight: <%= @user.weight %></p>
-    <p>Gender: <%= @user.gender %></p>
-    <p>Height: <%= @user.height %></p>
-    <p>Goal: <%= @user.goal %></p>
-    <p>Experience: <%= @user.experience %></p>
+  <div id="profile-page">
+    <div class="profile">
+      <h1> Profile Settings </h1>
+      <p><%= @user.first_name  %></p>
+      <p>Age: <%= @user.age %></p>
+      <p>Weight: <%= @user.weight %></p>
+      <p>Gender: <%= @user.gender %></p>
+      <p>Height: <%= @user.height %></p>
+      <p>Goal: <%= @user.goal %></p>
+      <p>Experience: <%= @user.experience %></p>
+      <%= link_to "Edit profile" , edit_user_registration_path, class:"edit-profile"  %>
+    </div>
   </div>
   
