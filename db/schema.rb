@@ -10,9 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_22_100846) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_12_071029) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "body_part_workouts", force: :cascade do |t|
+    t.bigint "body_part_id", null: false
+    t.bigint "workout_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["body_part_id"], name: "index_body_part_workouts_on_body_part_id"
+    t.index ["workout_id"], name: "index_body_part_workouts_on_workout_id"
+  end
+
+  create_table "body_parts", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "days", force: :cascade do |t|
+    t.integer "day_number"
+    t.string "description"
+    t.integer "duration"
+    t.bigint "week_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["week_id"], name: "index_days_on_week_id"
+  end
 
   create_table "invoices", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -53,6 +78,40 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_100846) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "weeks", force: :cascade do |t|
+    t.integer "week_number"
+    t.string "description"
+    t.bigint "program_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["program_id"], name: "index_weeks_on_program_id"
+  end
+
+  create_table "workout_days", force: :cascade do |t|
+    t.bigint "workout_id", null: false
+    t.bigint "day_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["day_id"], name: "index_workout_days_on_day_id"
+    t.index ["workout_id"], name: "index_workout_days_on_workout_id"
+  end
+
+  create_table "workouts", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "difficulty"
+    t.string "video_url"
+    t.string "img_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "body_part_workouts", "body_parts"
+  add_foreign_key "body_part_workouts", "workouts"
+  add_foreign_key "days", "weeks"
   add_foreign_key "invoices", "programs"
   add_foreign_key "invoices", "users"
+  add_foreign_key "weeks", "programs"
+  add_foreign_key "workout_days", "days"
+  add_foreign_key "workout_days", "workouts"
 end

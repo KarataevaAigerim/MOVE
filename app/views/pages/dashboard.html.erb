@@ -25,45 +25,13 @@
 
  <div class="page">
     <h2 class="header-page"> 12 week gym program </h2>
-
-    <div class="week">
-        <%= link_to "Week 1", root_path, class: "week-text" %>
-    </div>
-    <div class="week">
-        <%= link_to "Week 2", root_path, class: "week-text" %>
-    </div>
-    <div class="week">
-        <%= link_to "Week 3", root_path, class: "week-text" %>
-    </div>
-    <div class="week">
-        <%= link_to "Week 4", root_path, class: "week-text" %>
-    </div>
-    <div class="week">
-        <%= link_to "Week 5", root_path, class: "week-text" %>
-    </div>
-    <div class="week">
-        <%= link_to "Week 6", root_path, class: "week-text" %>
-    </div>
-    <div class="week">
-        <%= link_to "Week 7", root_path, class: "week-text" %>
-    </div>
-    <div class="week">
-        <%= link_to "Week 8", root_path, class: "week-text" %>
-    </div>
-    <div class="week">
-        <%= link_to "Week 9", root_path, class: "week-text" %>
-    </div>
-    <div class="week">
-        <%= link_to "Week 10", root_path, class: "week-text" %>
-    </div>
-     <div class="week">
-        <%= link_to "Week 11", root_path, class: "week-text" %>
-    </div>
-    <div class="week">
-        <%= link_to "Week 12", root_path, class: "week-text" %>
-    </div>
-
-    
+    <% Week.all.each do |week| %>
+        <%= link_to program_path(week.id), class: "week-text" do  %>
+            <div class="week">
+                Week <%= week.week_number %>
+            </div>
+        <% end %>
+    <% end %>
   </div>
  </div>
 

@@ -1,0 +1,2 @@
+class BodyPartWorkout < ApplicationRecord
+end
