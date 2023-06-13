@@ -22,17 +22,13 @@
  </div>
 </div>
 
-
- <div class="page">
-    <h2 class="header-page"> 12 week gym program </h2>
-    <% Week.all.each do |week| %>
-        <%= link_to week_path(week.id), class: "week-text" do  %>
+<div class="page">
+    <h2 class="header-page"> This is week <%= @week.week_number %> </h2>
+    <% Day.all.each do |day| %>
+        <%= link_to day_path(day.id), class: "week-text" do  %>
             <div class="week">
-                Week <%= week.week_number %>
+                Day <%= day.day_number %>
             </div>
         <% end %>
     <% end %>
   </div>
- </div>
-
-
