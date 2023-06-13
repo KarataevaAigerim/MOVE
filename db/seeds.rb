@@ -14,11 +14,11 @@ Program.destroy_all
 Workout.destroy_all
 
 puts "Workout Seeding..."
-workout1 = Workout.create!(name: "Push Ups", description: "Push ups are a great way to build upper body strength and can be done anywhere.", difficulty: "Beginner", video_url: "https://www.youtube.com/watch?v=IODxDxX7oi4", img_url: "https://i.imgur.com/1ZUjQZv.png")
-workout2 = Workout.create!(name: "Squats", description: "Squats are a great way to build lower body strength and can be done anywhere.", difficulty: "Beginner", video_url: "https://www.youtube.com/watch?v=QKKZ9AGYTi4", img_url: "https://i.imgur.com/1ZUjQZv.png")
-workout3 = Workout.create!(name: "Pull Ups", description: "Pull ups are a great way to build upper body strength and can be done anywhere.", difficulty: "Beginner", video_url: "https://www.youtube.com/watch?v=QKKZ9AGYTi4", img_url: "https://i.imgur.com/1ZUjQZv.png")
-workout4 = Workout.create!(name: "Lunges", description: "Lunges are a great way to build lower body strength and can be done anywhere.", difficulty: "Beginner", video_url: "https://www.youtube.com/watch?v=QKKZ9AGYTi4", img_url: "https://i.imgur.com/1ZUjQZv.png")
-workout5 = Workout.create!(name: "Dips", description: "Dips are a great way to build upper body strength and can be done anywhere.", difficulty: "Beginner", video_url: "https://www.youtube.com/watch?v=QKKZ9AGYTi4", img_url: "https://i.imgur.com/1ZUjQZv.png")
+w1 = Workout.create!(name: "Dumbbell Flat Bench Chest Press", description: "Push ups are a great way to build upper body strength and can be done anywhere.", difficulty: "Beginner", video_url: "https://www.youtube.com/watch?v=IODxDxX7oi4", img_url: "https://i.imgur.com/1ZUjQZv.png")
+w2 = Workout.create!(name: "Squats", description: "Squats are a great way to build lower body strength and can be done anywhere.", difficulty: "Beginner", video_url: "https://www.youtube.com/watch?v=QKKZ9AGYTi4", img_url: "https://i.imgur.com/1ZUjQZv.png")
+w3 = Workout.create!(name: "Pull Ups", description: "Pull ups are a great way to build upper body strength and can be done anywhere.", difficulty: "Beginner", video_url: "https://www.youtube.com/watch?v=QKKZ9AGYTi4", img_url: "https://i.imgur.com/1ZUjQZv.png")
+w4 = Workout.create!(name: "Lunges", description: "Lunges are a great way to build lower body strength and can be done anywhere.", difficulty: "Beginner", video_url: "https://www.youtube.com/watch?v=QKKZ9AGYTi4", img_url: "https://i.imgur.com/1ZUjQZv.png")
+w5 = Workout.create!(name: "Dips", description: "Dips are a great way to build upper body strength and can be done anywhere.", difficulty: "Beginner", video_url: "https://www.youtube.com/watch?v=QKKZ9AGYTi4", img_url: "https://i.imgur.com/1ZUjQZv.png")
 
 puts "Program Seeding..."
 program = Program.create(name: "12 week gym program", content: "This program is designed to help you get started with your fitness journey.", price: 89)

@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     put '/update_profile', to: 'users#update_profile', as: :update_profile
   end
   resources :programs, only: [:show, :index]
-  get '/programs/:program_id/weeks/:week_id/days/:day_id/workout_days/:id', to: 'workout_days#show', as: :workout_day
+  resources :weeks, only: [:index, :show]
+  resources :days, only: [:show]
+  
 
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
