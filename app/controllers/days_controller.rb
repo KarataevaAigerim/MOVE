@@ -4,6 +4,10 @@ class DaysController < ApplicationController
         @workouts = @day.workouts
         @workout_day = WorkoutDay.find_by(day_id: @day.id)
         @workout = @workout_day.workout if @workout_day.present?
-       
+        @workout_days = @day.workout_days.includes(:workout) 
     end
 end
+
+
+
+
