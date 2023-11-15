@@ -1,11 +1,17 @@
 
-<h1><%= @day.description %></h1>
-<% @day.workout_days.each do |workout_day| %>
-  <h2><%= workout_day.workout.name %></h2>
-  <p><%= workout_day.workout.description %></p>
-  <img src="<%= workout_day.workout.img_url %>" alt="Workout Image">
-  <video width="560" height="315" controls>
-    <source src="<%= workout_day.workout.video_url %>" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-<% end %>
+<div class="container">
+  <div class="day-page-container" id="day">
+    <h1 class="text-center"><%= @day.description %></h1>
+    <% @day.workout_days.each do |workout_day| %>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h2><%= workout_day.workout.name %></h2>
+          <p><%= workout_day.workout.difficulty %> </p>
+          <p><%= workout_day.workout.description %></p>
+          <p><%=workout_day.workout.pt %></p>
+          <img src="<%= workout_day.workout.img_url %>" alt="Workout Image" class="img-fluid">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
