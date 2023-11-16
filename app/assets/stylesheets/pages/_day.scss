@@ -1,7 +1,27 @@
 .card{
     background-color:$light-a;
+    border-radius:15px;
+    border-color: $dark-main;
+}
+.card-body{
+    padding: 1.5rem;
 }
 
 body{
     background-color:white;
+    h2,h1{
+        color:$dark-main;
+    }
+}
+
+.workout-image{
+    width:20%;
+    height:30%;
+    object-fit:cover;
+}
+
+.back-day{
+    text-align: right;
+    margin-bottom: 10px;
+    margin-right: 5px;
 }

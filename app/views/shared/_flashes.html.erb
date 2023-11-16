@@ -1,14 +1,15 @@
 <% if notice %>
-  <div class="alert alert-info alert-dismissible fade show m-1" role="alert">
+  <div class="alert alert-info alert-dismissible fade m-1" role="alert">
     <%= notice %>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
     </button>
   </div>
 <% end %>
 <% if alert %>
-  <div class="alert alert-warning alert-dismissible fade show m-1" role="alert">
+  <div class="alert alert-warning alert-dismissible fade m-1" role="alert">
     <%= alert %>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
     </button>
   </div>
 <% end %>
+ <%# I have removed "show" class from first two divs <div class="alert alert-info alert-dismissible show fade m-1" role="alert"> and <div class="alert alert-warning alert-dismissible show fade m-1" role="alert"> %>

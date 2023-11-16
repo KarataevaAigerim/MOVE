@@ -41,8 +41,10 @@
     font-weight: 700;
     font-size: 35px;
     line-height: 36px;
+    color: white;
    //  text-align: center;
  }
+ 
   
  .main-page-headers{
     font-family: $pretty-font;
@@ -93,6 +95,10 @@
  .card-product .card-product-infos {
    padding: 16px;
    align-items: center;
+ }
+
+ .buy-program {
+  color:white;
  }
 
  .footer {

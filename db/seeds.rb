@@ -54,7 +54,7 @@ workouts_data = [
       },
       {
         name: "Bar Dips",
-        sets: "4 sets of 10 reps",
+        sets: "4 sets of 10 reps", 
         description: "With the feet placed firmly on the supporting cross bars, grasp the dip bars...\nOnce the arms are in full support of the body...",
         difficulty: "Intermediate",
         video_url: "",

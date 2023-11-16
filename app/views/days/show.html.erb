@@ -1,15 +1,18 @@
 
-<div class="container">
-  <div class="day-page-container" id="day">
-    <h1 class="text-center"><%= @day.description %></h1>
-    <% @day.workout_days.each do |workout_day| %>
+<div class="container", id="day">
+  <div class="day-page-container">
+    <h1 class="text-center mb-4"><%= @day.description %></h1>
+    <div class="back-day">
+       <%=link_to "Back", week_path, class: "back-btn w3-bar-item w3-button hover-sidebar-list mb-4"%> 
+    </div>
+    <% @day.workout_days.each_with_index do |workout_day, index| %>
       <div class="card mb-3">
         <div class="card-body">
-          <h2><%= workout_day.workout.name %></h2>
+          <h2><%= "#{index + 1}. #{workout_day.workout.name}" %></h2>
           <p><%= workout_day.workout.sets %> </p>
           <p><%= workout_day.workout.description %></p>
           <p><%=workout_day.workout.pt %></p>
-          <img src="<%= workout_day.workout.img_url %>" alt="Workout Image" class="img-fluid">
+          <img src="<%= workout_day.workout.img_url %>" alt="Workout Image" class="img-fluid workout-image">
         </div>
       </div>
     <% end %>
