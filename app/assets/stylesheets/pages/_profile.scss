@@ -1,21 +1,61 @@
 
-#profile-page{
+#profile-page {
     background-color: white;
-    height: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start; /* Align to the top */
+    justify-content: flex-start; /* Justify to the left */
+    padding: 20px; /* Add padding to the top and left for spacing */
 }
 
-
-
-.profile{
+.profile {
     height: 500px;
     width: 700px;
-    border-radius: 15px;
-    background-color: $light-a;
-    border: 2px solid $main;
-    margin: auto;
+    /* Add other styles as needed */
+    margin: 0; /* Remove default margin */
     padding: 25px 50px;
+    // border-radius: 15px;
+    //background-color: $light-a;
+    // border: 2px solid $main;
 }
 
-.edit-profile{
+.edit-profile {
     color: $main;
 }
+
+.profile {
+    p {
+        font-size: 20px;
+        background-color: $light-main;
+        line-height: 3;
+    }
+}
+
+.line-color {
+    background-color: $light-a !important;
+}
+
+.banner {
+    background-size: cover;
+    background-position: center;
+    padding: 200px 0;
+    border-radius: 20px;
+    // height: 500px;
+    // width: 700px;
+  }
+  
+  .banner h1 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  .banner p {
+    font-size: 20px;
+    color: white;
+    opacity: .7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+  

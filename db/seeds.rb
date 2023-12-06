@@ -401,35 +401,113 @@ end
 
 puts "Workout Days Seeding..."
 
+# Initialize workouts and days arrays
+workouts = Workout.all.order(:id).to_a
+days = Day.all.order(:id).to_a
+
+
 # Define the associations between workouts and days
 workout_day_associations = [
-  { workout_id: workouts[0].id, day_description: "Upper body A" },
-  { workout_id: workouts[1].id, day_description: "Upper body A" },
-  { workout_id: workouts[2].id, day_description: "Upper body A" },
+  { workout_id: workouts[0].id, day_id: days[0].id},
+  { workout_id: workouts[1].id, day_id: days[0].id },
+  { workout_id: workouts[2].id, day_id: days[0].id },
  
-  { workout_id: workouts[3].id, day_description: "Lower body B" },
-  { workout_id: workouts[4].id, day_description: "Lower body B" },
-  { workout_id: workouts[5].id, day_description: "Lower body B" },
+  { workout_id: workouts[3].id, day_id: days[1].id },
+  { workout_id: workouts[4].id, day_id: days[1].id },
+  { workout_id: workouts[5].id, day_id:days[1].id },
 
-  { workout_id: workouts[6].id, day_description: "Upper body B" },
-  { workout_id: workouts[7].id, day_description: "Upper body B" },
-  { workout_id: workouts[8].id, day_description: "Upper body B" },
+  { workout_id: workouts[6].id, day_id: days[2].id },
+  { workout_id: workouts[7].id, day_id:days[2].id },
+  { workout_id: workouts[8].id, day_id: days[2].id },
 
-  { workout_id: workouts[9].id, day_description: "Lower body A" },
-  { workout_id: workouts[10].id, day_description: "Lower body A" },
-  { workout_id: workouts[11].id, day_description: "Lower body A" },
+  { workout_id: workouts[9].id, day_id: days[3].id },
+  { workout_id: workouts[10].id, day_id: days[3].id},
+  { workout_id: workouts[11].id, day_id: days[3].id },
 
-  { workout_id: workouts[12].id, day_description: "Full Body" },
-  { workout_id: workouts[13].id, day_description: "Full Body" },
-  { workout_id: workouts[14].id, day_description: "Full Body" },
- 
+  { workout_id: workouts[12].id, day_id:days[4].id  },
+  { workout_id: workouts[13].id, day_id: days[4].id },
+  { workout_id: workouts[14].id, day_id: days[4].id },
+
+  { workout_id: workouts[15].id, day_id: days[5].id },
+  { workout_id: workouts[16].id, day_id: days[5].id },
+  { workout_id: workouts[17].id, day_id: days[5].id },
+
+  { workout_id: workouts[18].id, day_id: days[6].id },
+  { workout_id: workouts[19].id, day_id: days[6].id },
+  { workout_id: workouts[20].id, day_id: days[6].id },
+
+  { workout_id: workouts[21].id, day_id: days[7].id },
+  { workout_id: workouts[22].id, day_id: days[7].id },
+  { workout_id: workouts[23].id, day_id: days[7].id },
+  
+  { workout_id: workouts[24].id, day_id: days[8].id },
+  { workout_id: workouts[25].id, day_id: days[8].id },
+  { workout_id: workouts[26].id, day_id: days[8].id },
+
+  { workout_id: workouts[27].id, day_id: days[9].id },
+  { workout_id: workouts[28].id, day_id: days[9].id },
+  { workout_id: workouts[29].id, day_id: days[9].id },
+
+  { workout_id: workouts[30].id, day_id: days[10].id },
+  { workout_id: workouts[31].id, day_id: days[10].id },
+  { workout_id: workouts[32].id, day_id: days[10].id },
+
+  { workout_id: workouts[33].id, day_id: days[11].id },
+  { workout_id: workouts[34].id, day_id: days[11].id },
+  { workout_id: workouts[35].id, day_id: days[11].id },
+
+  { workout_id: workouts[36].id, day_id: days[12].id },
+  { workout_id: workouts[37].id, day_id: days[12].id },
+  { workout_id: workouts[38].id, day_id: days[12].id },
+
+  { workout_id: workouts[39].id, day_id: days[13].id },
+  { workout_id: workouts[26].id, day_id: days[13].id },
+  { workout_id: workouts[25].id, day_id: days[13].id },
+
+  { workout_id: workouts[24].id, day_id: days[14].id },
+  { workout_id: workouts[23].id, day_id: days[14].id },
+  { workout_id: workouts[22].id, day_id: days[14].id },
+  
+  { workout_id: workouts[21].id, day_id: days[15].id },
+  { workout_id: workouts[20].id, day_id: days[15].id },
+  { workout_id: workouts[19].id, day_id: days[15].id },
+  
+  { workout_id: workouts[18].id, day_id: days[16].id },
+  { workout_id: workouts[17].id, day_id: days[16].id },
+  { workout_id: workouts[16].id, day_id: days[16].id },
+
+  { workout_id: workouts[15].id, day_id: days[17].id },
+  { workout_id: workouts[14].id, day_id: days[17].id },
+  { workout_id: workouts[13].id, day_id: days[17].id },
+  
+  { workout_id: workouts[12].id, day_id: days[18].id },
+  { workout_id: workouts[11].id, day_id: days[18].id },
+  { workout_id: workouts[10].id, day_id: days[18].id },
+
+  { workout_id: workouts[9].id, day_id: days[19].id },
+  { workout_id: workouts[8].id, day_id: days[19].id },
+  { workout_id: workouts[7].id, day_id: days[19].id },
+
+  { workout_id: workouts[6].id, day_id: days[20].id },
+  { workout_id: workouts[5].id, day_id: days[20].id },
+  { workout_id: workouts[4].id, day_id: days[20].id },
+
+  { workout_id: workouts[3].id, day_id: days[21].id },
+  { workout_id: workouts[2].id, day_id: days[21].id },
+  { workout_id: workouts[1].id, day_id: days[21].id }
 # Continue adding associations for other days and workouts
   ]
 # Create workout day records using the associations
 workout_day_associations.each do |association|
-  day = Day.find_by(description: association[:day_description])
-  WorkoutDay.create(workout_id: association[:workout_id], day_id: day.id) if day
+  WorkoutDay.create(association)
 end
+
+# workout_day_associations.each do |association|
+#   day = Day.find_by(day_id: association[:day_id])
+#   WorkoutDay.create(workout_id: association[:workout_id], day_id: day.id) if day
+# end
+
+
 
 # upper_body_a_day = Day.find_by(description: "Upper body A")
 # workout_ids = [w1.id, w7.id, w14.id, w5.id, w15.id]  

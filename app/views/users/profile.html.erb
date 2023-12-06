@@ -2,14 +2,26 @@
   <div id="profile-page">
     <div class="profile">
       <h1> Profile Settings </h1>
-      <p><%= @user.first_name  %></p>
-      <p>Age: <%= @user.age %></p>
-      <p>Weight: <%= @user.weight %></p>
+      <p class="line-color"><%= @user.first_name%> <%= @user.last_name %></p>
+      <p>Age: <%= @user.age %> years old</p>
+      <p class="line-color">Weight: <%= @user.weight %> kg</p>
       <p>Gender: <%= @user.gender %></p>
-      <p>Height: <%= @user.height %></p>
+      <p class="line-color">Height: <%= @user.height %> cm</p>
       <p>Goal: <%= @user.goal %></p>
-      <p>Experience: <%= @user.experience %></p>
+      <p class="line-color">Experience: <%= @user.experience %></p>
       <%= link_to "Edit profile" , edit_user_registration_path, class:"edit-profile"  %>
+      <div>
+        <%= link_to "Back", :back, class: "back-btn"%>
+      </div>
+    </div>
+
+    <div>
+      <div class="banner" style="background-image: url(https://assets-global.website-files.com/63920281abe048fc1411d880/64f1ba24aec1688d88ecd39e_lWndESeytPoxiLxoVIrXnzszLSH5dPkwIwLbIR2WQMnVG_qqFAe-6H6Owjm3mX326yWvLEmkNR_A0HgIOQhecgcKtHlCe5I51C218lnwSm1ilDttG0j9_JnjuWDNYkYmfr3F40vw_mj-KmWbEP9_QNQ.jpeg);">
+        <div class="container">
+          <h1>Share your <strong> fitness journey</strong> with your <strong> friend</strong>!</h1>
+          <p>Gift your bestie 14 days trial for free</p>
+          <a class="main-btn" href="#">Share</a>
+        </div>
+      </div>
     </div>
   </div>
-  

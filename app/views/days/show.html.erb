@@ -3,7 +3,7 @@
   <div class="day-page-container">
     <h1 class="text-center mb-4"><%= @day.description %></h1>
     <div class="back-day">
-       <%=link_to "Back", week_path, class: "back-btn w3-bar-item w3-button hover-sidebar-list mb-4"%> 
+       <%=link_to "Back", week_path(@day.week_id), class: "back-btn w3-bar-item w3-button hover-sidebar-list mb-4"%> 
     </div>
     <% @day.workout_days.each_with_index do |workout_day, index| %>
       <div class="card mb-3">
