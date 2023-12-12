@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :programs
   has_many :invoices
+  has_many :progresses
 end
   
   

@@ -1,0 +1,28 @@
+
+<div class="container">
+  <h1 class="text-center">Progress photos</h1>
+  <p class="text-center mt-3 mb-5">Track your progress here, take regular snaps and mark each photo with your current weight.</p>
+  <div class="progress-photos">
+    <% current_user.progresses.each do |progress| %>
+      <% if progress.photos.attached? %>
+        <% progress.photos.each do |photo| %>
+          <div class="photo-container">
+            <%= image_tag(photo, style: 'width: 300px; height: auto;') %>
+            <p><%= progress.date.to_date.strftime('%B %d, %Y') %></p>
+            <%= link_to 'Delete', user_progress_path(current_user, progress), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% end %>
+      <% else %>
+        <p>No photo uploaded yet</p>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form_with model: [@user, @progress], local: true do |f| %>
+      <%= f.label :photos %>
+      <%= f.file_field :photos, multiple: true %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :programs, only: [:show, :index]
   resources :weeks, only: [:index, :show]
   resources :days, only: [:show]
+  resources :users do
+    resources :progresses, only: [:index, :new, :create, :destroy]
+  end
   
 
   
