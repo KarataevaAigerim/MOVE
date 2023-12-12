@@ -5,5 +5,19 @@
     grid-gap: 5px;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
 }
 
+.create{
+    border-radius: 20px;
+    border: 0.5px solid $main;
+    color: $main;
+    width: calc(100% - 100px);
+    padding: 20px 30px; 
+    margin: 0 auto 50px;
+    box-sizing: border-box;   
+}
+.photos-upl{
+    justify-content: center;
+    align-items: center;
+}

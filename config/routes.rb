@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     resources :progresses, only: [:index, :new, :create, :destroy]
   end
   
+  get 'contact', to: 'pages#contact'
+  get 'tips', to: 'pages#tips'
+  
 
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

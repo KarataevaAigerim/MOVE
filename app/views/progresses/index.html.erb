@@ -18,10 +18,10 @@
     <% end %>
   </div>
 
-  <div>
+  <div class="create">
     <%= form_with model: [@user, @progress], local: true do |f| %>
-      <%= f.label :photos %>
-      <%= f.file_field :photos, multiple: true %>
+      <%= f.label :photos  %>
+      <%= f.file_field :photos, multiple: true, class: 'photos-upl' %>
       <%= f.submit %>
     <% end %>
   </div>

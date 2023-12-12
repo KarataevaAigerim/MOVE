@@ -8,4 +8,12 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
+  def contact
+    @user = current_user
+  end
+
+  def tips
+    @user = current_user
+  end
+
 end
