@@ -40,7 +40,17 @@
   font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
-  //   border: 1px solid #4A4A4A;
+}
+
+.upl-new-btn{
+  color: $super-dark;
+  background-color: #FFFFFF;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  border: 1px solid #4A4A4A;
 }
 
 .buy-btn:hover{
@@ -49,12 +59,23 @@
 
 .back-btn{
     color: $super-dark;
-    padding: 0px, 24px;
+    padding: 0px 24px;
     border-radius: 50px;
     font-weight: lighter;
     opacity: 0.6;
     transition: opacity 0.3s ease;
 }
+
+.upl-btn{
+  color: $super-dark;
+  padding: 0px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  border: 1px solid #4A4A4A;
+}
+
 
 .main-b-btn{
   color: white;
@@ -73,4 +94,41 @@
 .main-b-btn:hover {
   background: $main-b;
   color: white;
+}
+
+.choose-btn {
+  color: $super-dark;
+  padding: 0 24px; /* Removed comma from padding */
+  font-weight: lighter;
+  background: transparent; /* Ensures no background color */
+  border: none; /* Removes the border */
+  opacity: 0.6;
+  transition: all 0.3s ease; /* 'all' to include other properties like transform */
+  text-decoration: none; /* Optional: if it's a link, this removes the underline */
+}
+
+.choose-btn:hover, .choose-btn:focus {
+  opacity: 1; /* Makes text fully opaque */
+  transform: scale(1.1); /* Grows the text size by 10% */
+  color: darken($super-dark, 10%); /* Makes the color darker; requires SASS */
+  background-color: $grey-a;
+  border-radius: 50px;
+}
+
+.del-btn {
+  color: white;
+  padding: 0 24px; /* Removed comma from padding */
+  font-weight: lighter;
+  background: transparent; /* Ensures no background color */
+  border: none; /* Removes the border */
+  opacity: 0.6;
+  transition: all 0.3s ease; /* 'all' to include other properties like transform */
+  text-decoration: none; /* Optional: if it's a link, this removes the underline */
+}
+
+.del-btn:hover, .del-btn:focus {
+  opacity: 1; /* Makes text fully opaque */
+  transform: scale(1.1); /* Grows the text size by 10% */
+  color: darken(red, 10%); /* Makes the color darker; requires SASS */
+  
 }

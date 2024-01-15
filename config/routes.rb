@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   resources :weeks, only: [:index, :show]
   resources :days, only: [:show]
   resources :users do
-    resources :progresses, only: [:index, :new, :create, :destroy]
+    resources :progresses, only: [:index, :new, :create, :destroy, :show]
+    collection do
+      post :upload
+    end
   end
   
   get 'contact', to: 'pages#contact'

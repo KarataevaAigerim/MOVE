@@ -83,14 +83,14 @@
 
  .card-product {
    overflow: hidden;
-   height: 150px;
+   height: 200px;
    width: 75%;
    background: $main;
    box-shadow: 0 0 15px rgba(0,0,0,0.2);
    display: flex;
    align-items: center;
    border-radius: 15px; 
-   margin-bottom: 50px;
+   margin-bottom: 100px;
  }
 
  .card-product .card-product-infos {
@@ -100,38 +100,6 @@
 
  .buy-program {
   color:white;
- }
-
- .footer {
-   background: #F4F4F4;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   height: 100px;
-   padding: 0px 50px;
-   color: rgba(0,0,0,0.3);
- }
- .footer-links {
-   display: flex;
-   align-items: center;
- }
- .footer-links a {
-   color: black;
-   opacity: 0.15;
-   text-decoration: none;
-   font-size: 24px;
-   padding: 0px 10px;
- }
- .footer-links a:hover {
-   opacity: 1;
- }
- .footer .fa-heart {
-   color: #D23333;
- }
-
- .credit-cards img {
-   height: 30px;
-   width: 45px;
  }
  
  

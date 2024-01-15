@@ -1,0 +1,47 @@
+<!-- Modal Structure -->
+<div class="modal upload-modal fade" id="addPhotosModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addPhotosModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addPhotosModalLabel">Add Progress Photos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Photo Upload Form Inside the Modal -->
+        <%= form_with model: [@user, @progress], local: true, id: 'photo-upload-form' do |f| %>
+          <%= f.label :photos, 'Upload Photos', class:"custom-file-label d-none" %>
+          <%= f.file_field :photos, multiple: true, class: 'photos-upl d-none', direct_upload:true %>
+          <!-- Custom button to trigger the file input -->
+          <button class="choose-btn mb-3" onclick="document.querySelector('.photos-upl').click()" type="button">
+            Choose Files
+          </button>
+          <div class="modal-footer">
+            <%= f.submit "Upload", class: 'main-btn' %>
+            <button type="button" class="upl-new-btn" data-bs-dismiss="modal">Close</button>
+            <div id="file-warning" class="alert alert-warning d-none">
+              Please choose a file to upload!
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var uploadForm = document.getElementById('photo-upload-form');
+    var fileWarning = document.getElementById('file-warning');
+    uploadForm.addEventListener('submit', function (e) {
+      var fileInput = document.querySelector('.photos-upl');
+      if (fileInput.files.length === 0) {
+        fileWarning.classList.remove('d-none'); // Show the warning message
+        e.preventDefault(); // Prevent the form from submitting
+      } else {
+        fileWarning.classList.add('d-none'); // Hide the warning message if files are selected
+      }
+    });
+  });
+</script>

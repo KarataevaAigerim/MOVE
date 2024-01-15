@@ -21,13 +21,30 @@ class ProgressesController < ApplicationController
         render :new
       end
     end
+
+    def show
+
+    end
   
     def destroy
       @user = current_user
       @progress = @user.progresses.find(params[:id])
       @progress.destroy
-      # redirect to the progress index
-      redirect_to user_progresses_path(@user)
+      redirect_to user_progresses_path(current_user), notice: 'It was successfully destroyed.'
+    end
+
+    def upload
+      uploaded_file = params[:file]
+      cloudinary_file = Cloudinary::Uploader.upload(uploaded_file, public_id: uploaded_file.original_filename)
+      @progress = @user.progresses.build(progress_params)
+      @progress.date = Date.today
+      @progress.photos = cloudinary_file["url"]
+      if @progress.save
+        # redirect to the progress index
+        redirect_to user_progresses_path(@user)
+      else
+        render :new
+      end
     end
   
     private

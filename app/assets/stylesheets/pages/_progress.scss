@@ -21,3 +21,35 @@
     justify-content: center;
     align-items: center;
 }
+
+.progress-photos {
+    /* Add any additional styling for the container if necessary */
+  }
+  
+  .photo-container {
+    position: relative;
+    width: 300px; /* Match the image width, or adjust as needed */
+    margin-bottom: 24px; /* Optional margin for spacing */
+  }
+  
+  .progress-photo {
+    width: 100%;
+    height: auto;
+    display: block; /* Ensures the image takes up the full width of .photo-container */
+  }
+  
+  .photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    color: white;
+    padding: 8px;
+    text-align: center; /* Center the text and button if desired */
+  }
+  
+  .photo-date {
+    margin: 0; /* Remove default paragraph margin */
+  }
+  

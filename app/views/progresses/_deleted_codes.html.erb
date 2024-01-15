@@ -1,0 +1,24 @@
+<div class="create">
+    <%= form_with model: [@user, @progress], local: true do |f| %>
+      <%= f.label :photos  %>
+      <%= f.file_field :photos, multiple: true, class: 'photos-upl' %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+
+
+   <%= render 'upload' %>
+    <div class="progress-photos">
+      <% current_user.progresses.each do |progress| %>
+        <% if progress.photos.attached? %>
+          <% progress.photos.each do |photo| %>
+            <div class="photo-container">
+              <%= image_tag(photo, style: 'width: 300px; height: auto;') %>
+              <p><%= progress.date.to_date.strftime('%B %d, %Y') %></p>
+              <%= button_to 'Delete', user_progress_path(current_user, progress), method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
