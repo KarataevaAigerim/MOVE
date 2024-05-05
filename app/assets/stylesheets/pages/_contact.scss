@@ -1,7 +1,11 @@
 
 
 .wrapper {
-    display: flex;
+    display: block;
     flex-direction: column;
     min-height: 100vh; /* Use viewport height instead of percentage */
+  }
+
+  .contact-page {
+
   }
